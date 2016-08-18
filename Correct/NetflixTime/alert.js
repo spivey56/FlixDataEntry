@@ -24,9 +24,9 @@ if(isNaN(isInt)){
   var tvEpisode = tvLong.slice(locEp+4,locEp+6);
 }
 var newTvName = "";
-if(tvName.search("/")>0 ||tvName.search("%")>0||tvName.search("\\")>0){
+if(tvName.search("/")>0 ||tvName.search("%")>0){
   for(var i=0; i<tvName.length; i++){
-    if(tvName.charAt(i) === "/"||tvName.charAt(i) === "\\"||tvName.charAt(i) === "%"){
+    if(tvName.charAt(i) === "/"||tvName.charAt(i) === "%"){
       newTvName += '_';
     } else {
       newTvName += tvName.charAt(i);
