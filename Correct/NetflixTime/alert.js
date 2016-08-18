@@ -23,6 +23,17 @@ if(isNaN(isInt)){
 } else{ //if it is a number
   var tvEpisode = tvLong.slice(locEp+4,locEp+6);
 }
+var newTvName = "";
+if(tvName.search("/")>0 ||tvName.search("%")>0||tvName.search("\\")>0){
+  for(var i=0; i<tvName.length; i++){
+    if(tvName.charAt(i) === "/"||tvName.charAt(i) === "\\"||tvName.charAt(i) === "%"){
+      newTvName += '_';
+    } else {
+      newTvName += tvName.charAt(i);
+    }
+  }
+  tvName = newTvName;
+}
 var time = parseInt(skip);
 var title = tvName + "."+tvSeason+"."+tvEpisode;
 alert(title+ "  " + time);
